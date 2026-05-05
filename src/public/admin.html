@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Sergio Rivarola Estilista</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Sergio Rivarola Estilista</h1>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/admin">Panel Admin</a></li>
+                <li><a href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="admin-container">
+            <h2>Panel Administrativo</h2>
+
+            <!-- Tabs de navegación -->
+            <div class="admin-tabs">
+                <button class="tab-btn activo" onclick="cambiarTab('turnos')">Turnos</button>
+                <button class="tab-btn" onclick="cambiarTab('fotos')">Subir Fotos</button>
+                <button class="tab-btn" onclick="cambiarTab('configuracion')">Configuración</button>
+            </div>
+
+            <!-- Tab 1: Gestionar Turnos -->
+            <div id="tab-turnos" class="tab-content activo">
+                <h3>Gestionar Turnos</h3>
+                
+                <div class="filtros">
+                    <button onclick="filtrarTurnos('todos')">Todos</button>
+                    <button onclick="filtrarTurnos('pendiente')">Pendientes</button>
+                    <button onclick="filtrarTurnos('aprobado')">Aprobados</button>
+                    <button onclick="filtrarTurnos('rechazado')">Rechazados</button>
+                </div>
+
+                <div id="lista-turnos-admin" class="lista-turnos-admin">
+                    <p>Cargando turnos...</p>
+                </div>
+            </div>
+
+            <!-- Tab 2: Subir Fotos -->
+            <div id="tab-fotos" class="tab-content">
+                <h3>Subir Fotos a la Galería</h3>
+                
+                <form id="form-fotos" onsubmit="subirFoto(event)" class="form-fotos">
+                    <div class="form-group">
+                        <label for="nombre-foto">Nombre/Descripción:</label>
+                        <input type="text" id="nombre-foto" placeholder="Ej: Corte premium" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="url-foto">URL de la imagen:</label>
+                        <input type="url" id="url-foto" placeholder="https://ejemplo.com/foto.jpg" required>
+                    </div>
+
+                    <button type="submit">Subir Foto</button>
+                </form>
+
+                <div id="mensaje-foto" class="mensaje"></div>
+
+                <h4>Fotos en la Galería</h4>
+                <div id="lista-fotos" class="lista-fotos">
+                    <p>Cargando fotos...</p>
+                </div>
+            </div>
+
+            <!-- Tab 3: Configuración -->
+            <div id="tab-configuracion" class="tab-content">
+                <h3>Configuración del Sitio</h3>
+                
+                <form id="form-config" onsubmit="guardarConfiguracion(event)" class="form-config">
+                    <div class="form-group">
+                        <label for="foto-portada-url">URL Foto Portada:</label>
+                        <input type="url" id="foto-portada-url" placeholder="https://ejemplo.com/portada.jpg">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="horario-abierto">Hora de Apertura:</label>
+                        <input type="time" id="horario-abierto">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="horario-cierre">Hora de Cierre:</label>
+                        <input type="time" id="horario-cierre">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion">Descripción del Negocio:</label>
+                        <textarea id="descripcion" placeholder="Cuéntanos sobre tu negocio..." rows="5"></textarea>
+                    </div>
+
+                    <button type="submit">Guardar Configuración</button>
+                </form>
+
+                <div id="mensaje-config" class="mensaje"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sergio Rivarola Estilista. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>
