@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sergio Rivarola Estilista</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Sergio Rivarola Estilista</h1>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/galeria">Galería</a></li>
+                <li><a href="/turnos">Solicitar Turno</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <!-- Formulario de Login -->
+            <div class="form-box" id="login-form">
+                <h2>Iniciar Sesión</h2>
+                <form onsubmit="hacerLogin(event)">
+                    <input type="email" placeholder="Email" id="email-login" required>
+                    <input type="password" placeholder="Contraseña" id="password-login" required>
+                    <button type="submit">Iniciar Sesión</button>
+                    <p>¿No tienes cuenta? <a href="#" onclick="cambiarFormulario()">Regístrate aquí</a></p>
+                </form>
+                <div id="mensaje-login" class="mensaje"></div>
+            </div>
+
+            <!-- Formulario de Registro -->
+            <div class="form-box" id="registro-form" style="display:none;">
+                <h2>Crear Cuenta</h2>
+                <form onsubmit="hacerRegistro(event)">
+                    <input type="text" placeholder="Nombre Completo" id="nombre-registro" required>
+                    <input type="email" placeholder="Email" id="email-registro" required>
+                    <input type="tel" placeholder="Teléfono" id="telefono-registro">
+                    <input type="password" placeholder="Contraseña" id="password-registro" required>
+                    <input type="password" placeholder="Confirmar Contraseña" id="password-confirm" required>
+                    <button type="submit">Registrarse</button>
+                    <p>¿Ya tienes cuenta? <a href="#" onclick="cambiarFormulario()">Inicia sesión aquí</a></p>
+                </form>
+                <div id="mensaje-registro" class="mensaje"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sergio Rivarola Estilista. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>

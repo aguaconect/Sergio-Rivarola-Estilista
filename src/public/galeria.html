@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Sergio Rivarola Estilista</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="galeria.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Sergio Rivarola Estilista</h1>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/galeria">Galería</a></li>
+                <li><a href="/turnos">Solicitar Turno</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="galeria-container">
+            <h2>Galería de Trabajos</h2>
+            <p class="subtitulo">Mira algunos de nuestros mejores trabajos</p>
+
+            <div class="galeria-grid" id="galeria">
+                <p class="cargando">Cargando fotos...</p>
+            </div>
+        </div>
+
+        <!-- Modal para ver foto grande -->
+        <div id="modal" class="modal">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <img class="modal-content" id="modal-img">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sergio Rivarola Estilista. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="galeria.js"></script>
+</body>
+</html>

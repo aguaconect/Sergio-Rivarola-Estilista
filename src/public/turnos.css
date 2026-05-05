@@ -1,0 +1,129 @@
+.turnos-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.turnos-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.info-usuario {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    border-left: 4px solid #667eea;
+}
+
+.info-usuario p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.form-turno {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-turno label {
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.form-turno input,
+.form-turno select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.form-turno input:focus,
+.form-turno select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+.form-turno button {
+    padding: 12px;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-turno button:hover {
+    background-color: #5568d3;
+}
+
+.mis-turnos {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mis-turnos h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.lista-turnos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.turno-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #667eea;
+}
+
+.turno-item p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.turno-estado {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.turno-estado.pendiente {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.turno-estado.aprobado {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.turno-estado.rechazado {
+    background-color: #f8d7da;
+    color: #721c24;
+}

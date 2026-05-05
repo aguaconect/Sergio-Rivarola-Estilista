@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Turno - Sergio Rivarola Estilista</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="turnos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Sergio Rivarola Estilista</h1>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/galeria">Galería</a></li>
+                <li><a href="/turnos">Solicitar Turno</a></li>
+                <li><a href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="turnos-container">
+            <h2>Solicitar un Turno</h2>
+
+            <!-- Información del usuario logeado -->
+            <div class="info-usuario">
+                <p>Usuario: <span id="nombre-usuario">Cargando...</span></p>
+                <p>Email: <span id="email-usuario">Cargando...</span></p>
+            </div>
+
+            <!-- Formulario para solicitar turno -->
+            <form class="form-turno" onsubmit="solicitarTurno(event)">
+                <div class="form-group">
+                    <label for="fecha">Fecha deseada:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="hora">Hora deseada:</label>
+                    <input type="time" id="hora" name="hora" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="servicio">Servicio:</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="">-- Selecciona un servicio --</option>
+                        <option value="Corte de cabello">Corte de cabello</option>
+                        <option value="Afeitado">Afeitado</option>
+                        <option value="Tinte">Tinte</option>
+                        <option value="Peinado">Peinado</option>
+                        <option value="Tratamiento capilar">Tratamiento capilar</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <button type="submit">Solicitar Turno</button>
+            </form>
+
+            <div id="mensaje-turno" class="mensaje"></div>
+
+            <!-- Lista de mis turnos -->
+            <div class="mis-turnos">
+                <h3>Mis Turnos</h3>
+                <div id="lista-turnos" class="lista-turnos">
+                    <p>Cargando...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sergio Rivarola Estilista. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="turnos.js"></script>
+</body>
+</html>
